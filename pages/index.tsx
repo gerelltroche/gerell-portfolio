@@ -1,7 +1,9 @@
 import type { NextPage } from 'next'
-import styles from '../styles/Home.module.css'
-import Cloud from "./components/Cloud";
+import styles from '../styles/Home.module.scss'
 import React from "react";
+import dynamic from "next/dynamic";
+
+const DynamicCloud = dynamic(() => import("./components/Cloud"), { ssr: false });
 
 const Home: NextPage = () => {
 
@@ -11,13 +13,13 @@ const Home: NextPage = () => {
         for (let i = 0; i < 10; i++) {
             let randomSeed = Math.floor(Math.random() * 100)* .01;
             clouds.push(
-                <Cloud
+                <DynamicCloud
                     key={i}
                     size={`${randomSeed}px`}
                     color={'whitesmoke'}
                     speed={`${randomSeed * 15}s`}
                     opacity={randomSeed}
-                    top={randomSeed * 4.5}
+                    top={`${100 - randomSeed * 100}%`}
                 />
             );
         }
@@ -27,8 +29,15 @@ const Home: NextPage = () => {
     const clouds = generateClouds();
 
     return (
-    <main className={styles.main} style={{overflowX: "hidden"}}>
-        {clouds.map(cloud => cloud)}
+    <main className={styles.main}>
+        <div style={{zIndex: 1}}>
+            {clouds}
+        </div>
+        <h1 style={{
+            textAlign: "center",
+            marginTop: "10vh",
+            zIndex: 10,
+        }}>Do Be Cloudy</h1>
     </main>
     )
 }
