@@ -31,7 +31,8 @@ function Hero (): JSX.Element {
 
     return (
         <section className={styles.section}>
-            <h1 className={styles.title}>Test</h1>
+            <h1 className={styles.title}>Code is creativity.</h1>
+            <p className={styles.p}> or insert other cheesy line here</p>
             <div className={styles.cloudContainer}>
                 {clouds}
             </div>

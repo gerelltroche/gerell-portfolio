@@ -9,6 +9,9 @@ const Home: NextPage = () => {
     return (
         <main className={styles.main}>
             <Hero />
+            <div>
+                <h1>Skills</h1>
+            </div>
         </main>
     )
 }
