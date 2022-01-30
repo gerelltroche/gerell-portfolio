@@ -1,0 +1,18 @@
+.section {
+  height: 1000px;
+  background: rgb(2,0,36);
+  background: linear-gradient(0deg, rgba(2,0,36,1) 2%, rgb(52, 52, 93) 12%, rgba(0, 212, 255, 0.4) 100%);
+}
+.title {
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding-top: calc(50% - 3rem);
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.cloudContainer {
+  height: inherit;
+  position: relative;
+}

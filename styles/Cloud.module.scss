@@ -1,0 +1,39 @@
+.cloud {
+  position: absolute;
+  opacity: var(--cloud-opacity);
+  top: calc(100% - var(--top));
+  width: calc(var(--size) * 300);
+  height: calc(var(--size) * 100);
+  background-color: var(--color);
+  border-radius: calc(var(--size) * 50);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.07);
+  animation: moveclouds var(--speed) linear infinite;
+
+  &::before {
+    content: '';
+    width: calc(var(--size) * 100);
+    height: calc(var(--size) * 100);
+    border-radius: 60%;
+    left: calc(var(--size) * 42);
+    top: calc(var(--size) * -55);
+    position: absolute;
+    background-color: var(--color);
+  }
+
+  &::after {
+    content: '';
+    width: calc(var(--size) * 175);
+    height: calc(var(--size) * 175);
+    border-radius: 50%;
+    left: calc(var(--size) * 100);
+    top: calc(var(--size) * -90);
+    position: absolute;
+    background-color: var(--color);
+  }
+
+  @keyframes moveclouds {
+    0% {margin-left: calc(100vw);}
+    100% {margin-left: calc(-25vw - 100%);}
+  }
+
+}
